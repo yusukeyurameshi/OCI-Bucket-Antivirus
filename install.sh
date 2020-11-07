@@ -11,7 +11,7 @@ git clone https://github.com/yusukeyurameshi/OCI-Bucket-Antivirus.git
 #0 10 * * * /usr/bin/freshclam
 
 
-cat /root/OCI-Bucket-Antivirus/crontab.txt | crontab -
+cat /OCI-Bucket-Antivirus/crontab.txt | crontab -
 
 
 yum -y install clamav clamav-scanner-systemd
