@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "ClamAV Iniciado"
+
 yum install -y git
 pip3 install oci oci-cli
 #requests pandas
@@ -22,7 +24,7 @@ echo "LocalSocket /run/clamd.scan/clamd.sock" >>/etc/clamd.d/scan.conf
 setsebool -P antivirus_can_scan_system 1
 
 freshclam
-
+echo "ClamAV Atualizado"
 
 yum -y install clamav-update
 
@@ -30,6 +32,7 @@ yum -y install clamav-update
 systemctl start clamd@scan
 systemctl enable clamd@scan
 
+echo "ClamAV Finalizado"
 
 
 
