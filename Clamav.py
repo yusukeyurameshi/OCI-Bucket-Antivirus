@@ -22,9 +22,7 @@ def create_signer():
 
 
 def streamingEnv(config, signer):
-    streamingID = 'ocid1.stream.oc1.sa-saopaulo-1.amaaaaaaytuymbaaxamd7su6xeaoyvnlus7ku4nccmdbtznnspamfcqong3q'
     endpoint = "https://cell-1.streaming.sa-saopaulo-1.oci.oraclecloud.com"
-
     streaming = oci.streaming.StreamClient(config, endpoint, signer=signer)
 
 
@@ -60,6 +58,7 @@ def execClamAV(file):
 def Main():
 
     config, signer = create_signer()
+    streamingID = 'ocid1.stream.oc1.sa-saopaulo-1.amaaaaaaytuymbaaxamd7su6xeaoyvnlus7ku4nccmdbtznnspamfcqong3q'
     streamingEnv(config, signer)
     readMessages(streamingID)
 
