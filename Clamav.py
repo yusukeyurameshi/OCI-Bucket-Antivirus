@@ -21,13 +21,10 @@ def create_signer():
     return config, signer
 
 
-def streamingEnv(config, signer):
+def readMessages(streamingID, config, signer):
+    cursor_detail = getCursor()
     endpoint = "https://cell-1.streaming.sa-saopaulo-1.oci.oraclecloud.com"
     streaming = oci.streaming.StreamClient(config, endpoint, signer=signer)
-
-
-def readMessages(streamingID):
-    cursor_detail = getCursor()
     cursor = streaming.create_cursor(streamingID, cursor_detail)
     r = streaming.get_messages(streamingID, cursor.data.value)
 
@@ -59,7 +56,6 @@ def Main():
 
     config, signer = create_signer()
     streamingID = 'ocid1.stream.oc1.sa-saopaulo-1.amaaaaaaytuymbaaxamd7su6xeaoyvnlus7ku4nccmdbtznnspamfcqong3q'
-    streamingEnv(config, signer)
-    readMessages(streamingID)
+    readMessages(streamingID, config, signer)
 
 Main()
