@@ -16,7 +16,7 @@ git clone https://github.com/yusukeyurameshi/OCI-Bucket-Antivirus.git
 cat /OCI-Bucket-Antivirus/crontab.txt | crontab -
 
 
-yum -y install clamav clamav-scanner-systemd
+yum -y install clamav clamav-scanner-systemd clamav-update
 
 ln -s /etc/clamd.d/scan.conf /etc/clamd.conf
 
@@ -25,8 +25,6 @@ setsebool -P antivirus_can_scan_system 1
 
 freshclam
 echo "ClamAV Atualizado"
-
-yum -y install clamav-update
 
 
 systemctl start clamd@scan
