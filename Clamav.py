@@ -55,7 +55,7 @@ def execClamAV(file):
 def Main():
 
     config, signer = create_signer()
-    streamingID = 'ocid1.stream.oc1.sa-saopaulo-1.amaaaaaaytuymbaaxamd7su6xeaoyvnlus7ku4nccmdbtznnspamfcqong3q'
+    streamingID = ''
     readMessages(streamingID, config, signer)
 
 Main()
