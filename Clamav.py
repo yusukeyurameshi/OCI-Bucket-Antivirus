@@ -1,12 +1,12 @@
 import os, oci, subprocess
 from oci.config import validate_config
-#from dotenv import load_dotenv
+from dotenv import load_dotenv
 from base64 import b64decode, b64encode
 
+load_dotenv()
 instance_dict = {}
 
 def create_signer():
-
     # assign default values
     config_file = oci.config.DEFAULT_LOCATION
     config_section = oci.config.DEFAULT_PROFILE
@@ -53,9 +53,8 @@ def execClamAV(file):
             print('Arquivo nao contaminado')
 
 def Main():
-
     config, signer = create_signer()
-    streamingID = ''
+    streamingID = os.environ.get('StreamID')
     readMessages(streamingID, config, signer)
 
 Main()
