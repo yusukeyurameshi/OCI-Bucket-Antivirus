@@ -2,14 +2,18 @@
 
 echo "ClamAV Iniciado"
 
+yum install -y httpd
 yum install -y git
+git clone https://github.com/yusukeyurameshi/OCI-Bucket-Antivirus.git
+cat /OCI-Bucket-Antivirus/crontab.txt | crontab -
+
+
 pip3 install --upgrade setuptools
 pip3 install oci oci-cli
 pip3 install wheel
 pip3 install python-dotenv
 #requests pandas
 
-git clone https://github.com/yusukeyurameshi/OCI-Bucket-Antivirus.git
 
 yum -y install clamav clamav-scanner-systemd clamav-update
 
