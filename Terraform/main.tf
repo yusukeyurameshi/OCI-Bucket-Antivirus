@@ -58,7 +58,11 @@ resource "oci_core_security_list" "security_list" {
   vcn_id         = oci_core_vcn.virtual_network.id
 
   ingress_security_rules {
-    protocol = ""
+    protocol = "TCP"
+    tcp_options {
+      max = 22
+      min = 22
+    }
     source = "0.0.0.0/0"
   }
 
