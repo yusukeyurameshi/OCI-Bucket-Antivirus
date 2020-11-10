@@ -57,6 +57,11 @@ resource "oci_core_security_list" "security_list" {
   compartment_id = oci_identity_compartment.ObjAntiVirus.id
   vcn_id         = oci_core_vcn.virtual_network.id
 
+  ingress_security_rules {
+    protocol = ""
+    source = "0.0.0.0/0"
+  }
+
   egress_security_rules {
     protocol    = "All"
     destination = "0.0.0.0/0"
