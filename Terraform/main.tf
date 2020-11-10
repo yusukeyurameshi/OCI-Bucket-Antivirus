@@ -66,6 +66,15 @@ resource "oci_core_security_list" "security_list" {
     source = "0.0.0.0/0"
   }
 
+  ingress_security_rules {
+    protocol = "6"
+    tcp_options {
+      max = 80
+      min = 80
+    }
+    source = "0.0.0.0/0"
+  }
+
   egress_security_rules {
     protocol    = "All"
     destination = "0.0.0.0/0"
