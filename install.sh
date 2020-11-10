@@ -13,6 +13,8 @@ yum install -y git
 git clone https://github.com/yusukeyurameshi/OCI-Bucket-Antivirus.git
 cat /OCI-Bucket-Antivirus/crontab.txt | crontab -
 
+/OCI-Bucket-Antivirus/status.sh
+
 STREAMID=$(curl -L http://169.254.169.254/opc/v1/instance/metadata | jq -j ".StreamID")
 echo "StreamID="$STREAMID > OCI-Bucket-Antivirus/.env
 
