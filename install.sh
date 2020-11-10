@@ -2,7 +2,9 @@
 
 echo "ClamAV Iniciado"
 
-firewall-offline-cmd --service=myservice --add-port=80/tcp
+firewall-offline-cmd --add-port=80/tcp
+systemctl stop firewalld
+systemctl start firewalld
 
 yum install -y httpd
 systemctl start httpd
