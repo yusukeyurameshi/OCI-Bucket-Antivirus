@@ -1,2 +1,6 @@
 #!/bin/bash
-ls
+
+cd /OCI-Bucket-Antivirus
+git pull
+
+
