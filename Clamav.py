@@ -1,3 +1,5 @@
+#!/bin/python3
+
 import os, oci, subprocess
 from oci.config import validate_config
 from dotenv import load_dotenv
