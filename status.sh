@@ -4,7 +4,4 @@ cd /OCI-Bucket-Antivirus
 git pull
 
 cp template.html /var/www/html/index.html
-echo "<pre>">>/var/www/html/index.html
-cat /var/log/messages | grep cloud-init>>/var/www/html/index.html
-echo "</pre>">>/var/www/html/index.html
-cat footer.html>>/var/www/html/index.html
+cat /var/log/messages | grep cloud-init>/var/www/html/instalacao.html
